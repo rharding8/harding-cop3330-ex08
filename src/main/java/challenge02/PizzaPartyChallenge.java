@@ -1,3 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Note: Incorporates challenge02 AND some code improvements.
+
 package challenge02;
 
 import java.util.Scanner;
@@ -17,18 +24,41 @@ public class PizzaPartyChallenge {
 
   public int getPeople(){
     System.out.print("How many people? ");
-    return input.nextInt();
+    String n = input.next();
+    try {
+      Integer.parseInt(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Answer! Try Again.");
+      return getPeople();
+    }
+    return Integer.parseInt(n);
   }
 
   public int getPizzas(){
     System.out.print("How many pizzas for them? ");
-    return input.nextInt();
+    String n = input.next();
+    try {
+      Integer.parseInt(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Answer! Try Again.");
+      return getPizzas();
+    }
+    return Integer.parseInt(n);
   }
 
   public int getSlices(int pizzas){
     System.out.print("How many slices per pizza? ");
-    int slices = input.nextInt();
-    return slices * pizzas;
+    String n = input.next();
+    try {
+      Integer.parseInt(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Answer! Try Again.");
+      return getSlices(pizzas);
+    }
+    return Integer.parseInt(n) * pizzas;
   }
 
   public String printPizza(int people, int pizzas, int slices){

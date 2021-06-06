@@ -1,3 +1,9 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Note: The version in package challenge02 contains several improvements making the code more robust.
 package base;
 
 import java.util.Scanner;
